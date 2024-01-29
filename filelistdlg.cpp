@@ -25,7 +25,7 @@ FileListDlg::FileListDlg(QWidget *parent) :
         for (uint32_t i = 0; i < m_playFileList.size() ; i++)
         {
             int column = 0;
-    /*        auto cell0 = new QTableWidgetItem(QString::number(i));
+    /*      auto cell0 = new QTableWidgetItem(QString::number(i));
             cell0->setTextAlignment(Qt::AlignLeft|Qt::AlignVCenter);
             ui->tableWidget->setItem(i, column++, cell0);
     */

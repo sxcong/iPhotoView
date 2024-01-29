@@ -605,17 +605,12 @@ void PhotoView::createPanels()
     _titlePanel->setBorderFlags( BorderPanel::RightBorder |
                                  BorderPanel::TopBorder );
 */
-    //qDebug()<<"_rightBorder->rect();"<<_rightBorder->rect();
     _exifPanel = new TextBorderPanel( this, _rightBorder );
-    //qDebug()<<"_rightBorder->rect();"<<_rightBorder->rect();
     _exifPanel->setSize( _rightBorder->rect().width(), _rightBorder->rect().height() );
-    qDebug()<<"_exifPanel->setSize"<<_rightBorder->rect().width()<<_rightBorder->rect().height();
     //_exifPanel->setPos(100, 100);
     _exifPanel->setBorderFlags( BorderPanel::CenterInView );
     //_exifPanel->setBorderFlags( BorderPanel::LeftBorder|BorderPanel::TopBorder );
-    //_exifPanel->setText("Test,测试");
     _exifPanel->setAlignment( Qt::AlignVCenter|Qt::AlignLeft );
-
     _exifPanel->hide();
     //_exifPanel->appearNow();
 

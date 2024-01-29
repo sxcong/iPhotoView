@@ -4,7 +4,7 @@
 #include <QFontDatabase>
 #include <QJsonDocument>
 #include <QDebug>
-const float VERSION = 0.1;
+const float VERSION = 0.1f;
 
 QVAboutDialog::QVAboutDialog(QWidget *parent) :
     QDialog(parent),
@@ -17,8 +17,6 @@ QVAboutDialog::QVAboutDialog(QWidget *parent) :
 
     //setAttribute(Qt::WA_DeleteOnClose);
     setWindowFlags(windowFlags() & (~Qt::WindowContextHelpButtonHint | Qt::CustomizeWindowHint));
-
-
     setWindowModality(Qt::ApplicationModal);
 
     // add fonts
