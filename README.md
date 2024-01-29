@@ -2,7 +2,9 @@
 photo Viewer, qt&amp;vc++2017
 
 
-<img src="[github.com/sxcong/iPhotoView/blob/main/readme/22.png](https://github.com/sxcong/iPhotoView/blob/main/readme/22.png)" width="210px">
+
+<img src="https://github.com/sxcong/iPhotoView/blob/main/readme/22.png" width="210px">
+https://github.com/sxcong/iPhotoView/blob/main/readme/22.png
 
 A simple, multi format image viewing tool that supports HEIC and will support videos and audios through ffmpeg in the future.
 
