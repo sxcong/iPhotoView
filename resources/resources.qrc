@@ -20,5 +20,6 @@
         <file>icon/right-90.png</file>
         <file>icon/originalSize.png</file>
         <file>icon/information.png</file>
+        <file>icon/playlist.png</file>
     </qresource>
 </RCC>
