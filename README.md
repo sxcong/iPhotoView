@@ -15,18 +15,31 @@ https://github.com/jurplel/qView
 https://github.com/shundhammer/qphotoview
 
 Third party libraries:
+
 libheif
+
 exiv2
+
 libjpeg-turbo
+
 libtiff
+
 libpng
+
 x265
+
 zlib
+
 portaudio
+
 ffmpeg
+
 glog
+
 hdf5
+
 freeimage
+
 
 
 
