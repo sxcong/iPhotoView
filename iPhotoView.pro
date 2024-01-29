@@ -101,7 +101,8 @@ CONFIG(release, debug|release){
 CONFIG(debug, debug|release){
     TARGET = iPhotoView_d
     DESTDIR=$$PWD/./bin/Debug
-    LIBS += -L$$PWD/./lib  -llibx265 -lturbojpeg -llibwebp -lheif -lde265
+    LIBS += -L$$PWD/./lib  -llibx265 -lturbojpeg -llibwebp -lheif -lde265 -lFreeImage -lFreeImagePlus -lexiv2
+LIBS += -lshell32 -luser32 -lole32 -lshlwapi -lgdi32
     #TRANSLATIONS += $$PWD/../Bin/Debug/translations/das_qt_cn.ts
 }
 
