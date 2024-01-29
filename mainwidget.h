@@ -39,6 +39,7 @@ public slots:
     void slot_mirror();
     void slot_left90();
     void slot_right90();
+    void slot_playlist();
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
     void mouseDoubleClickEvent(QMouseEvent *event) override;

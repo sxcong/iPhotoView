@@ -30,6 +30,8 @@ signals:
     void signal_left90();
     void signal_right90();
 
+    void signal_playlist();
+
 private slots:
     void on_pushButton_home_clicked();
     void on_pushButton_prev_clicked();
@@ -40,14 +42,12 @@ private slots:
     void on_pushButton_zoom_clicked();
     void on_pushButton_originalsize_clicked();
     void on_pushButton_fullscreen_clicked();
-
     void on_pushButton_flip_clicked();
-
     void on_pushButton_mirror_clicked();
-
     void on_pushButton_rotateright_clicked();
-
     void on_pushButton_rotateleft_clicked();
+
+    void on_pushButton_playlist_clicked();
 
 private:
     Ui::ToolbarWidget *ui;

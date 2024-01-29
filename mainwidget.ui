@@ -25,6 +25,15 @@
   <property name="windowTitle">
    <string>iPhotoView</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget
+{
+background: rgb(21, 21, 21,255);
+color:white;
+font:11pt &quot;Tahoma&quot;;
+}
+</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <property name="spacing">
     <number>0</number>

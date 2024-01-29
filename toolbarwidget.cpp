@@ -2,11 +2,6 @@
 #include "ui_toolbarwidget.h"
 #include <QDebug>
 
-/*
-    QString normal  = QString("QPushButton{ background:rgb(21, 21, 21, 0); background-image: url(%1); color:white; border:none; border-radius:1px;}").arg(image);
-    QString hover   = QString("QPushButton:hover{ background:rgb(10, 40, 70); background-image: url(%1); color:white; border:none; border-radius:1px;}").arg(image);
-    QString pressed = QString("QPushButton:pressed{ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5, fy:0.5, stop:0 rgb(10, 40, 70),stop:1 rgb(56, 132, 230));\
-                               background-image: url(%1); color:white; border:none; border-radius:1px;}").arg(image);*/
 QString makeButtonQSS(const QString& image)
 {
     QString normal  = QString("QPushButton{ background:rgb(21, 21, 21, 0); background-image: url(%1); color:white; border:none; border-radius:1px;}").arg(image);
@@ -24,6 +19,11 @@ ToolbarWidget::ToolbarWidget(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    QPalette pal = palette();
+    pal.setColor( QPalette::Base, Qt::black );
+    setPalette( pal );
+    //setFrameStyle( QFrame::NoFrame );
+
     QString image = ":/icon/24gl-first.png";
     ui->pushButton_home->setStyleSheet(makeButtonQSS(":/icon/24gl-first.png"));
     ui->pushButton_prev->setStyleSheet(makeButtonQSS(":/icon/24gl-previous.png"));
@@ -38,6 +38,7 @@ ToolbarWidget::ToolbarWidget(QWidget *parent) :
     ui->pushButton_rotateright->setStyleSheet(makeButtonQSS(":/icon/right-90.png"));
     ui->pushButton_originalsize->setStyleSheet(makeButtonQSS(":/icon/originalSize.png"));
     ui->pushButton_info->setStyleSheet(makeButtonQSS(":/icon/information.png"));
+    ui->pushButton_playlist->setStyleSheet(makeButtonQSS(":/icon/playlist.png"));
 }
 
 ToolbarWidget::~ToolbarWidget()
@@ -108,4 +109,10 @@ void ToolbarWidget::on_pushButton_rotateright_clicked()
 void ToolbarWidget::on_pushButton_rotateleft_clicked()
 {
     emit signal_left90();
+}
+
+
+void ToolbarWidget::on_pushButton_playlist_clicked()
+{
+    emit signal_playlist();
 }

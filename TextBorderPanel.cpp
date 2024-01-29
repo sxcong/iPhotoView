@@ -14,7 +14,7 @@
 
 
 TextBorderPanel::TextBorderPanel( PhotoView *	    parent,
-				  SensitiveBorder * border )
+                  SensitiveBorder * border )
     : BorderPanel( parent, border )
 {
     _textColor	   = QColor( Qt::white );
@@ -53,29 +53,29 @@ void TextBorderPanel::recalcTextSize()
     // which only lead to confusion. Let's keep it simple. For the bounding
     // rect, the alignment doesn't really matter anyway.
     QRectF textRect = fontMetrics.boundingRect( QRect( 0, 0, 1, 1 ),
-						Qt::AlignLeft | Qt::AlignTop,
-						_text );
+                        Qt::AlignLeft | Qt::AlignTop,
+                        _text );
     _textSize = textRect.size();
+    _textSize.setHeight(_textSize.height() + 100);
 }
 
-/*
+
 QSizeF TextBorderPanel::size() const
 {
-    return _textSize + QSizeF( 2*margin(), 2*margin() );
+    return _textSize + QSizeF( 2*margin(), 10*margin() );
 }
-*/
+
 
 void TextBorderPanel::paint( QPainter * painter,
-			     const QStyleOptionGraphicsItem * option,
-			     QWidget * widget )
+                 const QStyleOptionGraphicsItem * option,
+                 QWidget * widget )
 {
     BorderPanel::paint( painter, option, widget );
 
     QPointF textPos( margin(), margin() );
-    //textPos = boundingRect().topLeft();
+
     painter->setPen( _textColor );
     painter->drawText( QRectF( textPos, _textSize ),
-		       _textAlignment,
+               _textAlignment,
                _text );
 }
-

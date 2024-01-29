@@ -127,7 +127,7 @@ GraphicsItemPosAnimation * BorderPanel::disappearAnimation()
 
 QRectF BorderPanel::boundingRect() const
 {
-    return QRectF( QPointF( 0, 0 ), size() ) + QMargins(-10,-10,-10,-10);
+    return QRectF( QPointF( 0, 0 ), size() );
 }
 
 

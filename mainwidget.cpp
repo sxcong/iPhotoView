@@ -10,6 +10,7 @@
 #include "qvaboutdialog.h"
 #include "qvwelcomedialog.h"
 #include "imagefilemanager.h"
+#include "filelistdlg.h"
 
 MainWidget::MainWidget(QWidget *parent) :
     QWidget(parent),
@@ -19,6 +20,7 @@ MainWidget::MainWidget(QWidget *parent) :
 
     m_pToolbarWidget = new ToolbarWidget(this);
     m_pPhotoView = new PhotoView();
+    ui->widget->layout()->addWidget(m_pToolbarWidget);
     ui->widget->layout()->addWidget(m_pPhotoView);
 
 
@@ -61,6 +63,7 @@ MainWidget::MainWidget(QWidget *parent) :
     connect(m_pToolbarWidget, &ToolbarWidget::signal_mirror, this, &MainWidget::slot_mirror);
     connect(m_pToolbarWidget, &ToolbarWidget::signal_left90, this, &MainWidget::slot_left90);
     connect(m_pToolbarWidget, &ToolbarWidget::signal_right90, this, &MainWidget::slot_right90);
+    connect(m_pToolbarWidget, &ToolbarWidget::signal_playlist, this, &MainWidget::slot_playlist);
 
 
 
@@ -388,4 +391,12 @@ void MainWidget::disableActions()
     {
         menu->setEnabled(isPixmapLoaded);
     }
+}
+
+void MainWidget::slot_playlist()
+{
+    FileListDlg dlg;
+    //QVWelcomeDialog dlg;
+    //QVAboutDialog dlg;
+    dlg.exec();
 }

@@ -52,7 +52,8 @@ SOURCES += \
     imagefilemanager.cpp \
     toolbarwidget.cpp \
     exifinfo.cpp \
-    TJPEGWrapper.cpp
+    TJPEGWrapper.cpp \
+    filelistdlg.cpp
 
 HEADERS += \
         mainwidget.h \
@@ -81,14 +82,16 @@ HEADERS += \
     imagefilemanager.h \
     toolbarwidget.h \
     exifinfo.h \
-    TJPEGWrapper.h
+    TJPEGWrapper.h \
+    filelistdlg.h
 
 FORMS += \
         mainwidget.ui \
     qvaboutdialog.ui \
     qvopenwithdialog.ui \
     qvwelcomedialog.ui \
-    toolbarwidget.ui
+    toolbarwidget.ui \
+    filelistdlg.ui
 
 CONFIG(release, debug|release){
     TARGET = iPhotoView

@@ -102,8 +102,10 @@ std::string ExifInfo::makeString()
 
     for (uint i = 0; i < m_exifKeyList.size(); i++)
     {
-        ss << std::setw(30) << std::setfill(' ') << std::left << m_exifKeyList[i] << ": "
-                  << std::setfill(' ') << std::right << m_exifMap[m_exifKeyList[i]]<<'\n';
+        //ss << std::setw(30) << std::setfill(' ') << std::left << m_exifKeyList[i] << ": "
+        //          << std::setfill(' ') << std::right << m_exifMap[m_exifKeyList[i]]<<'\n';
+
+        ss <<std::left << m_exifKeyList[i] << ": " << std::setfill(' ') << std::right<< std::setw(9) << m_exifMap[m_exifKeyList[i]]<<'\n';
 
     }
     return ss.str();

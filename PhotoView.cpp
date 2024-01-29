@@ -161,9 +161,6 @@ void PhotoView::loadImageFile(QString& fileName, bool bRefreshDir)
             if (_exifPanel != nullptr)
             {
                 std::string text = m_exifInfo.makeString();
-
-
-
                 {
                     QString sName = "Name:" + m_fileInfo.fileName();
 
@@ -562,8 +559,8 @@ void PhotoView::layoutBorders( const QSizeF & size )
     thickness = height / 4;*/
 
 
-    _rightBorder->setRect( width - thickness, 50,
-               thickness-10, 400 );
+    _rightBorder->setRect(width - thickness, 50,
+               thickness-10, 600);
 /*
    _topBorder->setRect( thickness, top,
              width - 2 * thickness, thickness );
@@ -612,10 +609,11 @@ void PhotoView::createPanels()
     _exifPanel = new TextBorderPanel( this, _rightBorder );
     //qDebug()<<"_rightBorder->rect();"<<_rightBorder->rect();
     _exifPanel->setSize( _rightBorder->rect().width(), _rightBorder->rect().height() );
+    qDebug()<<"_exifPanel->setSize"<<_rightBorder->rect().width()<<_rightBorder->rect().height();
     //_exifPanel->setPos(100, 100);
     _exifPanel->setBorderFlags( BorderPanel::CenterInView );
     //_exifPanel->setBorderFlags( BorderPanel::LeftBorder|BorderPanel::TopBorder );
-    _exifPanel->setText("Test,测试");
+    //_exifPanel->setText("Test,测试");
     _exifPanel->setAlignment( Qt::AlignVCenter|Qt::AlignLeft );
 
     _exifPanel->hide();

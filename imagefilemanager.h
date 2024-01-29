@@ -51,6 +51,8 @@ public:
     QString nextFile();
     QString lastFile();
     QString getCurrentFile(){return m_szCurFile;};
+    int getCurrentIndex(){return m_nCurIndex;};
+    const vector<QString> &getPlayFileList() const { return m_folderFileList; }
 private:
     const QStringList &getFilterList() const { return filterList; }
     const QStringList &getNameFilterList() const { return nameFilterList; }
@@ -68,6 +70,7 @@ private:
     int m_nCurIndex;
     QString m_szCurFile;
     vector<QString> m_folderFileList;
+    QFileInfoList m_fileInfoList;
 
 
     //Natural sorting
@@ -76,10 +79,9 @@ private:
     //size
     //type
     int m_sortMode = 0;
-
     bool isLoopFoldersEnabled = false;
     ReadData m_readData;
-    QFileInfoList m_fileInfoList;
+
 };
 
 #endif // IMAGEFILEMANAGER_H

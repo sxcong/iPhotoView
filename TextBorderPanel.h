@@ -79,7 +79,7 @@ public:
     /**
      * Reimplemented from BorderPanel: Return the current size.
      */
-//    virtual QSizeF size() const Q_DECL_OVERRIDE;
+    virtual QSizeF size() const Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented from BorderPanel: Paint this item.

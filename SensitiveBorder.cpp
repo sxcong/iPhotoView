@@ -62,7 +62,7 @@ void SensitiveBorder::paint( QPainter * painter,
 
     if ( _debugMode )
     {
-    QPen pen( Qt::black, 1 );
+    QPen pen( Qt::red, 1 );
 	pen.setJoinStyle( Qt::MiterJoin );
 
 	const int grey = 32;
