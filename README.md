@@ -6,8 +6,10 @@ A simple, multi format image viewing tool that supports HEIC and will support vi
 Reference project:
 1 jpegview
 https://github.com/sylikc/jpegview
+
 2 qView
 https://github.com/jurplel/qView
+
 3 qphotoview
 https://github.com/shundhammer/qphotoview
 
