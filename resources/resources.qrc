@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/fonts">
+        <file>Lato-Light.ttf</file>
+        <file>Lato-Regular.ttf</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>checkmark.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>icon/24gl-first.png</file>
+        <file>icon/24gl-last.png</file>
+        <file>icon/24gl-next.png</file>
+        <file>icon/24gl-previous.png</file>
+        <file>icon/24gl-fullScreenEnter3.png</file>
+        <file>icon/24gl-zoomIn.png</file>
+        <file>icon/24gl-zoomOut.png</file>
+        <file>icon/tool_hFlip.png</file>
+        <file>icon/tool_vFlip.png</file>
+        <file>icon/left-90.png</file>
+        <file>icon/right-90.png</file>
+        <file>icon/originalSize.png</file>
+        <file>icon/information.png</file>
+    </qresource>
+</RCC>
