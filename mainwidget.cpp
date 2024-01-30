@@ -19,7 +19,7 @@ MainWidget::MainWidget(QWidget *parent) :
     ui->setupUi(this);
 
     m_pToolbarWidget = new ToolbarWidget(this);
-    m_pPhotoView = new PhotoView();
+    m_pPhotoView = new PhotoView(this);
     ui->widget->layout()->addWidget(m_pToolbarWidget);
     ui->widget->layout()->addWidget(m_pPhotoView);
 
@@ -65,37 +65,6 @@ MainWidget::MainWidget(QWidget *parent) :
     connect(m_pToolbarWidget, &ToolbarWidget::signal_right90, this, &MainWidget::slot_right90);
     connect(m_pToolbarWidget, &ToolbarWidget::signal_playlist, this, &MainWidget::slot_playlist);
 
-
-
-   /* menuBar = ActionManager::Instance().buildMenuBar();
-    connect(menuBar, &QMenuBar::triggered, this, [](QAction *triggeredAction){
-        ActionManager::actionTriggered(triggeredAction);
-    });*/
-
-
-    auto &actionManager = ActionManager::Instance();
-    contextMenu = new QMenu(this);
-
-    actionManager.addCloneOfAction(contextMenu, "open");
-    actionManager.addCloneOfAction(contextMenu, "openurl");
-    contextMenu->addMenu(actionManager.buildRecentsMenu(true, contextMenu));
-    contextMenu->addMenu(actionManager.buildOpenWithMenu(contextMenu));
-    actionManager.addCloneOfAction(contextMenu, "opencontainingfolder");
-    actionManager.addCloneOfAction(contextMenu, "showfileinfo");
-    contextMenu->addSeparator();
-    actionManager.addCloneOfAction(contextMenu, "rename");
-    actionManager.addCloneOfAction(contextMenu, "delete");
-    contextMenu->addSeparator();
-    actionManager.addCloneOfAction(contextMenu, "nextfile");
-    actionManager.addCloneOfAction(contextMenu, "previousfile");
-    contextMenu->addSeparator();
-    contextMenu->addMenu(actionManager.buildViewMenu(true, contextMenu));
-    contextMenu->addMenu(actionManager.buildToolsMenu(true, contextMenu));
-    contextMenu->addMenu(actionManager.buildHelpMenu(true, contextMenu));
-
-    connect(contextMenu, &QMenu::triggered, this, [this](QAction *triggeredAction){
-        actionTriggered(triggeredAction);
-    });
 }
 
 void MainWidget::populateOpenWithMenu(const QList<OpenWith::OpenWithItem> openWithItems)

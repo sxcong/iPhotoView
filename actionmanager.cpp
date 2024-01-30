@@ -545,10 +545,12 @@ void ActionManager::actionTriggered(QAction *triggeredAction)
 
 void ActionManager::actionTriggered(QAction *triggeredAction, MainWidget *relevantWindow)
 {
-    /*
+
     // Conditions that will work with a nullptr window passed
     auto key = triggeredAction->data().toStringList().first();
 
+    qDebug()<<"ActionManager::actionTriggered"<<key;
+    /*
     if (key == "quit") {
         if (relevantWindow) // if a window was passed
             relevantWindow->close(); // close it so geometry is saved

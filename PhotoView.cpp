@@ -27,14 +27,16 @@
 //#include "Logger.h"
 #include "imagefilemanager.h"
 #include "exifinfo.h"
+#include "mainwidget.h"
 
 
 static const int DefaultIdleTimeout = 4000; // millisec
 
 
-PhotoView::PhotoView(  )
+PhotoView::PhotoView( MainWidget* pMain )
     : QGraphicsView()
 {
+    m_pMainWidget = pMain;
     _lastPhoto = 0;
     _zoomMode = ZoomFitImage;
     _zoomFactor = 1.0;
@@ -765,7 +767,9 @@ void PhotoView::navigate( NavigationTarget where )
 
 void PhotoView::navigate()
 {
+
     QAction * action = qobject_cast<QAction *>( sender() );
+    qDebug()<<"navigate()"<<action->data();
 
     if ( action )
     {
@@ -787,7 +791,7 @@ void PhotoView::mouseMoveEvent ( QMouseEvent * event )
 
 void PhotoView::keyPressEvent( QKeyEvent * event )
 {
-  /*  if ( ! event )
+    if ( ! event )
     return;
 
     switch ( event->key() )
@@ -802,7 +806,7 @@ void PhotoView::keyPressEvent( QKeyEvent * event )
     case Qt::Key_9:	       setZoomFactor( 9.0 );	break;
     case Qt::Key_0:	       setZoomFactor( 10.0 );   break;
 
-    case Qt::Key_Y:
+    /*case Qt::Key_Y:
         {
         const int max=10;
         //logInfo() << "*** Benchmark start" << endl;
@@ -820,11 +824,12 @@ void PhotoView::keyPressEvent( QKeyEvent * event )
        //                   << endl;
         }
         break;
+        */
 
     default:
         QGraphicsView::keyPressEvent( event );
     }
-    */
+
 }
 
 
@@ -866,12 +871,12 @@ PhotoView::Actions::Actions( PhotoView * photoView ):
     //
 
     loadNext = createAction( tr( "Load &Next Image" ), Qt::Key_Space, NavigateNext );
-    addShortcut( loadNext, Qt::Key_PageDown );
-    CONNECT_ACTION( loadNext, photoView, navigate() );
+    addShortcut( loadNext, Qt::Key_Right );
+    CONNECT_ACTION( loadNext, photoView->m_pMainWidget, slot_next() );
 
     loadPrevious = createAction( tr( "Load &Previous Image" ), Qt::Key_Backspace, NavigatePrevious );
-    addShortcut( loadPrevious, Qt::Key_PageUp );
-    CONNECT_ACTION( loadPrevious, photoView, navigate() );
+    addShortcut( loadPrevious, Qt::Key_Left );
+    CONNECT_ACTION( loadPrevious, photoView->m_pMainWidget, slot_prev() );
 
     loadFirst = createAction( tr( "Load &First Image" ), Qt::Key_Home, NavigateFirst );
     CONNECT_ACTION( loadFirst, photoView, navigate() );

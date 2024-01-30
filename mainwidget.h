@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QShortcut>
+#include <QKeySequence>
+
 #include "PhotoView.h"
 
 #include <QFutureWatcher>

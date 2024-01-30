@@ -32,7 +32,7 @@ class SensitiveBorder;
 class BorderPanel;
 class TextBorderPanel;
 class ExifBorderPanel;
-
+class MainWidget;
 /**
  * Photo view widget: Display an image and optional meta data (EXIF data).
  */
@@ -41,6 +41,7 @@ class PhotoView: public QGraphicsView
     Q_OBJECT
 
 public:
+      MainWidget* m_pMainWidget = nullptr;
 
     /**
      * Helper class to bundle all the interactive actions provided by this the
@@ -112,7 +113,7 @@ public:
     /**
      * Constructor.
      */
-    PhotoView(  );
+    PhotoView(MainWidget* pMain);
 
     /**
      * Destructor.
