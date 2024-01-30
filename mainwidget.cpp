@@ -6,7 +6,6 @@
 #include <QDir>
 #include <QProcess>
 
-#include "actionmanager.h"
 #include "qvaboutdialog.h"
 #include "qvwelcomedialog.h"
 #include "imagefilemanager.h"
@@ -69,7 +68,7 @@ MainWidget::MainWidget(QWidget *parent) :
 
 void MainWidget::populateOpenWithMenu(const QList<OpenWith::OpenWithItem> openWithItems)
 {
-    for (int i = 0; i < ActionManager::Instance().getOpenWithMaxLength(); i++)
+    /*for (int i = 0; i < ActionManager::Instance().getOpenWithMaxLength(); i++)
     {
         const auto clonedActions = ActionManager::Instance().getAllClonesOfAction("openwith" + QString::number(i), this);
         for (const auto &action : clonedActions)
@@ -96,7 +95,7 @@ void MainWidget::populateOpenWithMenu(const QList<OpenWith::OpenWithItem> openWi
                 action->setVisible(false);
             }
         }
-    }
+    }*/
 }
 
 void MainWidget::requestPopulateOpenWithMenu()
@@ -335,7 +334,7 @@ void MainWidget::slot_updatedLoadedPixmapItem(QString& szFile)
 
 void MainWidget::disableActions()
 {
-    const auto &actionLibrary = ActionManager::Instance().getActionLibrary();
+   /* const auto &actionLibrary = ActionManager::Instance().getActionLibrary();
     for (const auto &action : actionLibrary)
     {
         const auto &data = action->data().toStringList();
@@ -359,7 +358,7 @@ void MainWidget::disableActions()
     for (const auto &menu : openWithMenus)
     {
         menu->setEnabled(isPixmapLoaded);
-    }
+    }*/
 }
 
 void MainWidget::slot_playlist()

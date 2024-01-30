@@ -43,10 +43,8 @@ SOURCES += \
     GraphicsItemPosAnimation.cpp \
     qvaboutdialog.cpp \
     qvaboutdialog.cpp \
-    actionmanager.cpp \
     openwith.cpp \
     qvwelcomedialog.cpp \
-    shortcutmanager.cpp \
     settingsmanager.cpp \
     qvwin32functions.cpp \
     imagefilemanager.cpp \
@@ -73,10 +71,8 @@ HEADERS += \
     GraphicsItemPosAnimation.h \
     qvaboutdialog.h \
     qvaboutdialog.h \
-    actionmanager.h \
     openwith.h \
     qvwelcomedialog.h \
-    shortcutmanager.h \
     settingsmanager.h \
     qvwin32functions.h \
     imagefilemanager.h \
